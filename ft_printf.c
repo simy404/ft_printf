@@ -10,33 +10,33 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdarg.h>
-#include "stdio.h"
-// int print_based_on_specifiers(const char *format, ...)
-// {
-
-// }
+#include "ft_printf.h"
 
 int	ft_printf(const char *format, ...)
 {
 	va_list args;
-	// args->fp_offset;
-	// args->gp_offset;
-	// args->overflow_arg_area;
-	// args->reg_save_area;
+	int total_len;
+	int len_printed;
 
+	total_len = 0;
 	va_start(args, format);
-	printf("%p\n", args->reg_save_area);
-	va_arg(args, int );
-	printf("%p\n", args->reg_save_area);
-	va_arg(args, int );
-	printf("%p\n", &args);
-	va_arg(args, int );
-
-	return 0;
+	while(*format)
+	{
+		if(*format == F_PERCENT && is_specifier(*(format + 1)))
+		{
+			len_printed = print_based_on_format(*(++format), args);
+			if (len_printed == -1)
+				return (-1);
+			total_len += len_printed;
+		}
+		else
+		{
+			ft_putchar(*format);
+			total_len++;
+		}
+		format++;
+	}
+	va_end(args);
+	return (total_len);
 }
 
-int main()
-{
-	ft_printf("asdf",15.12f , 2.1f , 3);
-}

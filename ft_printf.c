@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <stdio.h>
 
 int	ft_printf(const char *format, ...)
 {
@@ -31,7 +32,8 @@ int	ft_printf(const char *format, ...)
 		}
 		else
 		{
-			ft_putchar(*format);
+			if (ft_putchar(*format) == -1)
+				return (-1);
 			total_len++;
 		}
 		format++;

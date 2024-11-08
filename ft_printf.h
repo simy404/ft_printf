@@ -24,6 +24,7 @@
 #define F_CHAR 'c'
 #define F_STRING 's'
 #define F_POINTER 'p'
+#define F_INT 'i'
 
 #define HEX_BASE_L "0123456789abcdef"
 #define HEX_BASE_U "0123456789ABCDEF"
@@ -34,7 +35,7 @@ int	is_specifier(char format);
 int	print_based_on_format(const char format, va_list args);
 int	ft_putchar(int c);
 int ft_putstr(char *str);
-int ft_putnbr_base(unsigned long long nbr, char *base);
+int ft_putnbr_base(unsigned long nbr, char *base);
 int ft_putnbr(int n);
 
 #endif

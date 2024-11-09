@@ -36,6 +36,6 @@ int	print_based_on_format(const char format, va_list args);
 int	ft_putchar(int c);
 int ft_putstr(char *str);
 int ft_putnbr_base(unsigned long nbr, char *base);
-int ft_putnbr(int n);
+int ft_putnbr(long n);
 
 #endif

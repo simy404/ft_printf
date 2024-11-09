@@ -58,7 +58,7 @@ int ft_putnbr_base(unsigned long nbr, char *base)
 	return (len + 1);
 }
 
-int ft_putnbr(int n)
+int ft_putnbr(long n)
 {
 	int len;
 
@@ -66,7 +66,7 @@ int ft_putnbr(int n)
 	{
 		if (ft_putchar('-') == -1)
 			return (-1);
-		len = ft_putnbr_base(-n, DECIMAL_BASE);
+		len = ft_putnbr_base((long)(n), DECIMAL_BASE);
 		if (len == -1)
 			return (-1);
 		return (len + 1);

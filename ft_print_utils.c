@@ -13,8 +13,6 @@
 #include "ft_printf.h"
 #include <unistd.h>
 
-#include <stdio.h>
-
 int ft_strlen(char *str)
 {
 	int len;
@@ -42,7 +40,7 @@ int ft_putchar_tcase(int c) //TODO this func used to be for test
 	static int put_char_call_count = 0;
 	put_char_call_count++;
 	if (put_char_call_count == 4)
-		return -1;
+		return (-1);
 	return ft_putchar(c);
 }
 int ft_putnbr_base(unsigned long nbr, char *base)
@@ -66,12 +64,10 @@ int ft_putnbr(long n)
 	{
 		if (ft_putchar('-') == -1)
 			return (-1);
-		len = ft_putnbr_base(n, DECIMAL_BASE);
+		len = ft_putnbr_base(-1 * n, DECIMAL_BASE);
 		if (len == -1)
 			return (-1);
 		return (len + 1);
 	}
 	return (ft_putnbr_base(n, DECIMAL_BASE));
 }
-
-

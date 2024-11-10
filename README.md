@@ -6,6 +6,12 @@ On a 64-bit system, however, arguments are passed using a combination of registe
 
 However, **the specific behavior of variadic arguments in memory can vary significantly depending on the architecture and compiler**. Some compilers may handle variadic arguments differently, particularly when optimization flags are applied. These differences in handling are important to understand when working with low-level memory management or when porting code between systems.
 
+## Learn More
+
+For additional details on type promotions and how they affect variadic functions, check this link:  
+- [Type Promotions in C (cppreference.com)](https://www.gnu.org/software/c-intro-and-ref/manual/html_node/Argument-Promotions.html)
+
+
 ## Example Code
 ```c
 #include <stdio.h>

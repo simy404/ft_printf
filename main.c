@@ -1,9 +1,18 @@
-#include "ft_printf.h"
+// #include "ft_printf.h"
 #include <stdio.h>
+#include <stdarg.h>
+
+int test(int a , ...)
+{
+	va_list args;
+	va_start(args, a);
+	return a;
+}
 
 int main()
 {
 	int a = 122131232133;
-	ft_printf("%d test sa\n" , a);
-	printf("%d st sa\n", a);
+	PRINT_ADDRESS(a);
+	ft_printf("%p test sa\n" , &a);
+	printf("%p st sa\n", &a);
 }

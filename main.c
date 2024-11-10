@@ -1,23 +1,3 @@
-<<<<<<< HEAD
-// #include "ft_printf.h"
-#include <stdio.h>
-#include <stdarg.h>
-
-int test(int a , ...)
-{
-	va_list args;
-	va_start(args, a);
-	return a;
-}
-
-int main()
-{
-	int a = 122131232133;
-	PRINT_ADDRESS(a);
-	ft_printf("%p test sa\n" , &a);
-	printf("%p st sa\n", &a);
-}
-=======
 #include "ft_printf.h"
 #include <stdio.h>
 #include <limits.h>
@@ -78,4 +58,3 @@ char b = 'a';
     long c = INT_MIN * -1;
     printf("%ld",c);
 }
->>>>>>> 269b2424ae47d87b874aafe2bb29cc9c1a6ca062

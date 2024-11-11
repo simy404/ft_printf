@@ -13,23 +13,23 @@
 #include <stdarg.h>
 #include "ft_printf.h"
 
-int is_specifier(char format)
+int	is_specifier(char format)
 {
-	return (format == F_DECIMAL || format == F_UNSIGNED ||
-			format == F_HEX_UPPER || format == F_HEX_LOWER ||
-			format == F_PERCENT || format == F_CHAR ||
-			format == F_STRING || format == F_POINTER ||
-			format == F_INT);
+	return (format == F_DECIMAL || format == F_UNSIGNED
+		|| format == F_HEX_UPPER || format == F_HEX_LOWER
+		|| format == F_PERCENT || format == F_CHAR
+		|| format == F_STRING || format == F_POINTER
+		|| format == F_INT);
 }
 
-int print_based_on_format(const char format, va_list args)
+int	print_based_on_format(const char format, va_list args)
 {
 	if (format == F_CHAR)
 		return (ft_putchar(va_arg(args, int)));
 	else if (format == F_STRING)
-		return ft_putstr(va_arg(args, char *));
+		return (ft_putstr(va_arg(args, char *)));
 	else if (format == F_DECIMAL || format == F_INT)
-		return ft_putnbr(va_arg(args, int));
+		return (ft_putnbr(va_arg(args, int)));
 	else if (format == F_UNSIGNED)
 		return (ft_putnbr_base(va_arg(args, unsigned int), DECIMAL_BASE));
 	else if (format == F_HEX_LOWER)

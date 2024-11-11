@@ -299,3 +299,31 @@ On a 64-bit system, the first few arguments are stored in registers, while addit
 0x7ffe740573a0: 00 00 00 00 00 00 00 00 -> . . . . . . . .
 0x7ffe740573a8: ab da 3f c7 6c 55 00 00 -> . . . . . . . .
 0x7ffe740573b0: 90 74 05 74 01 00 00 00 -> . . . . . . . .
+```
+
+## Variadic Arguments: Type Promotion and Padding
+
+When small types like char, short, and float are passed as arguments, they are automatically promoted to larger types—char and short become int, and float becomes double. This type promotion ensures that variadic functions can read these values reliably with va_list.
+
+Padding, meanwhile, handles memory alignment. In 64-bit systems, all arguments are stored in 8-byte intervals for faster access, regardless of their original size. Type promotion standardizes data size, while padding arranges arguments in memory for efficient access with va_list.
+
+#Example Code
+```c
+void print_memory(void *q,int k);
+
+int test_variadic(int count, ...) {
+    va_list args;
+    va_start(args, count);
+    print_memory(&count + 1, 1000);
+    va_end(args);
+    return 1;
+}
+
+int main(void) {
+    char s = -1;
+    print_memory(&s, 8); 
+    test_variadic(100, s, 'a', 'c', s, 1, 2, 4, 5, 6, 7, 8, s, '9', 'a', 'b');
+    return 0;
+}
+```
+![image](https://github.com/user-attachments/assets/4058a5da-5002-4079-ab87-ef01c59bf8af)

@@ -35,5 +35,7 @@ int	ft_putchar(char c);
 int	ft_putstr(char *str);
 int	ft_putnbr_base(unsigned long nbr, char *base);
 int	ft_putnbr(long n);
+int	ft_strlen(char *str);
+int	ft_putptr(unsigned long ptr);
 
 #endif

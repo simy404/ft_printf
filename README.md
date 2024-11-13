@@ -30,14 +30,18 @@ int main(void) {
 	, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100);
     return 1;
 }
-
+```
 ---
 
 ## Example Output: 32-bit System
 
 In a 32-bit system, each argument occupies 4 bytes on the stack and is stored sequentially in memory.
+<details>
+<summary>Click to expand 32-bit System Memory Layout</summary>
 
+```
 ### 32-bit Memory Layout (Sample Output)
+
 | Address |          Hex Data        | ASCII Representation  |
 0xfff673d0: 64 00 00 00 01 00 00 00 -> d . . . . . . .  <----
 0xfff673d8: 02 00 00 00 03 00 00 00 -> . . . . . . . .
@@ -165,12 +169,18 @@ In a 32-bit system, each argument occupies 4 bytes on the stack and is stored se
 0xfff677a8: 00 00 00 00 00 00 00 00 -> . . . . . . . .
 0xfff677b0: 00 00 00 00 00 00 00 00 -> . . . . . . . .
 
+```
+</details>
+
 ---
 
 ## Example Output: 64-bit System
 
 On a 64-bit system, the first few arguments are stored in registers, while additional arguments are stored on the stack.
+<details>
+<summary>Click to expand 64-bit System Memory Layout</summary>
 
+```
 ### 64-bit Memory Layout (Sample Output)
 
 | Address |          Hex Data        | ASCII Representation  |
@@ -300,6 +310,7 @@ On a 64-bit system, the first few arguments are stored in registers, while addit
 0x7ffe740573a8: ab da 3f c7 6c 55 00 00 -> . . . . . . . .
 0x7ffe740573b0: 90 74 05 74 01 00 00 00 -> . . . . . . . .
 ```
+</details>
 
 ## Variadic Arguments: Type Promotion and Padding
 
@@ -308,6 +319,7 @@ When small types like char, short, and float are passed as arguments, they are a
 Padding, meanwhile, handles memory alignment. In 64-bit systems, all arguments are stored in 8-byte intervals for faster access, regardless of their original size. Type promotion standardizes data size, while padding arranges arguments in memory for efficient access with va_list.
 
 #Example Code
+
 ```c
 void print_memory(void *q,int k);
 

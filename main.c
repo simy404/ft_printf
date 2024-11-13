@@ -6,8 +6,9 @@
 int main()
 {
     int d = INT_MIN;
-    int a = ft_printf("%x\n", d);
-    int b = printf("%x\n", d);
-    printf("%d\n", a);
-    printf("%d\n", b);
+    int a = ft_printf("%s\n", 0);
+    int b = printf("%s\n", 0);
+    printf("%d\n",a);
+    printf("%d\n",b);
+
 }

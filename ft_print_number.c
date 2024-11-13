@@ -42,10 +42,12 @@ int	ft_putnbr(long n)
 	return (ft_putnbr_base(n, DECIMAL_BASE));
 }
 
-int ft_putptr(unsigned long ptr)
+int	ft_putptr(unsigned long ptr)
 {
-	int len;
+	int	len;
 
+	if (ptr == 0)
+		return (ft_putstr("(nil)"));
 	if (ft_putstr("0x") == -1)
 		return (-1);
 	len = ft_putnbr_base(ptr, HEX_BASE_L);

@@ -340,7 +340,7 @@ int main(void) {
 ```
 ![image](https://github.com/user-attachments/assets/4058a5da-5002-4079-ab87-ef01c59bf8af)
 
-## Example Output: va_list debug tool
+## va_list debug tool
 
 Include the print_va_list function in your code to inspect the values inside a va_list.
 

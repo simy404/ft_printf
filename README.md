@@ -339,3 +339,23 @@ int main(void) {
 }
 ```
 ![image](https://github.com/user-attachments/assets/4058a5da-5002-4079-ab87-ef01c59bf8af)
+
+## Example Output: va_list debug tool
+
+Include the print_va_list function in your code to inspect the values inside a va_list.
+
+```c
+void print_va_list(const char *format, va_list args)
+{
+
+    printf("\nSTART ->   ---va_list---\n\n");
+    printf("va_list address: %p\n", (void *)&args);
+    printf("va_list points to address: %p\n\n", (void *)args);
+    printf("gp_ofset: %d\n", *(((unsigned int*)(args))) );
+    printf("fp_ofset: %d\n", *(((unsigned int*)(args)) + 1));
+    printf("overflow_reg_area: 0x%lx\n", *(((unsigned long*)(args)) + 1));
+    printf("reg_save_area: 0x%lx\n\n", *(((unsigned long*)(args)) + 2));
+    printf("END ->     ---va_list---\n\n");
+}
+```
+

@@ -318,7 +318,7 @@ When small types like char, short, and float are passed as arguments, they are a
 
 Padding, meanwhile, handles memory alignment. In 64-bit systems, all arguments are stored in 8-byte intervals for faster access, regardless of their original size. Type promotion standardizes data size, while padding arranges arguments in memory for efficient access with va_list.
 
-#Example Code
+## Example Code
 
 ```c
 void print_memory(void *q,int k);

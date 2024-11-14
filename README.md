@@ -4,7 +4,7 @@ On a 32-bit system, arguments are typically stored sequentially on the stack. Ea
 
 On a 64-bit system, however, arguments are passed using a combination of registers and stack memory, with registers taking priority for the first few arguments (typically up to 6 integer or pointer arguments). Only when registers are exhausted are arguments placed on the stack.
 
-However, **the specific behavior of variadic arguments in memory can vary significantly depending on the architecture and compiler**. Some compilers may handle variadic arguments differently, particularly when optimization flags are applied. These differences in handling are important to understand when working with low-level memory management or when porting code between systems.
+However, **the specific behavior of variadic arguments in memory can vary significantly depending on the architecture and compiler**. Some compilers may handle variadic arguments differently, particularly when optimization flags are applied.
 
 ## Learn More
 

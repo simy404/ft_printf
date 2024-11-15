@@ -11,6 +11,9 @@ However, **the specific behavior of variadic arguments in memory can vary signif
 For additional details on type promotions and how they affect variadic functions, check this link:  
 - [Type Promotions in C (cppreference.com)](https://www.gnu.org/software/c-intro-and-ref/manual/html_node/Argument-Promotions.html)
 
+Table of Output Conversions in C (GNU C Library):
+- [Table of Output Conversions (gnu.org)](https://www.gnu.org/software/libc/manual/html_node/Table-of-Output-Conversions.html)
+
 
 ## Example Code
 ```c

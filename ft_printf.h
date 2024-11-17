@@ -29,7 +29,6 @@
 # define DECIMAL_BASE "0123456789"
 
 int	ft_printf(const char *format, ...);
-int	is_specifier(char format);
 int	print_based_on_format(const char format, va_list args);
 int	ft_putchar(char c);
 int	ft_putstr(char *str);

@@ -18,23 +18,22 @@ int	ft_printf(const char *format, ...)
 	int		total_len;
 	int		len_printed;
 
+	if (!format)
+		return (-1);
 	total_len = 0;
 	va_start(args, format);
 	while (*format)
 	{
-		if (*format == F_PERCENT && is_specifier(*(format + 1)))
+		len_printed = 1;
+		if (*format == F_PERCENT)
 		{
 			len_printed = print_based_on_format(*(++format), args);
 			if (len_printed == -1)
 				return (-1);
-			total_len += len_printed;
 		}
-		else
-		{
-			if (ft_putchar(*format) == -1)
-				return (-1);
-			total_len++;
-		}
+		else if (ft_putchar(*format) == -1)
+			return (-1);
+		total_len += len_printed;
 		format++;
 	}
 	va_end(args);

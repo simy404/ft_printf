@@ -12,15 +12,6 @@
 
 #include "ft_printf.h"
 
-int	is_specifier(char format)
-{
-	return (format == F_DECIMAL || format == F_UNSIGNED
-		|| format == F_HEX_UPPER || format == F_HEX_LOWER
-		|| format == F_PERCENT || format == F_CHAR
-		|| format == F_STRING || format == F_POINTER
-		|| format == F_INT);
-}
-
 int	print_based_on_format(const char format, va_list args)
 {
 	if (format == F_CHAR)

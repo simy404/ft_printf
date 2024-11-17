@@ -33,14 +33,3 @@ int	ft_putchar(char c)
 {
 	return (write(1, &c, 1));
 }
-
-__attribute__((unused))
-static int	ft_putchar_tcase(int c) // TODO this func used to be for test
-{
-	static int	put_char_call_count = 0;
-
-	put_char_call_count++;
-	if (put_char_call_count == 4)
-		return (-1);
-	return (ft_putchar(c));
-}

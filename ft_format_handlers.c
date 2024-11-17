@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_format_handlers.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: hsamir <hsamir@student.42kocaeli.com.tr    +#+  +:+       +#+        */
+/*   By: hsamir <hsamir@student.42kocaeli.com.tr>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/13 01:42:54 by hsamir            #+#    #+#             */
-/*   Updated: 2024/11/13 01:42:54 by hsamir           ###   ########.fr       */
+/*   Created: 2024/11/17 09:03:56 by hsamir            #+#    #+#             */
+/*   Updated: 2024/11/17 09:04:01 by hsamir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

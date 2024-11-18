@@ -1,3 +1,19 @@
+
+## 📌 Undefined Behavior in Conversion Specifications
+
+> **"If a conversion specification is invalid, the behavior is undefined. If any argument is not the correct type for the corresponding conversion specification, the behavior is undefined."**  
+> _Source:_ ISO/IEC 9899:1999, Section 7.19.6.1 — The `fprintf` Function
+
+> **"If the syntax of a conversion specification is invalid, unpredictable things will happen."**  
+> _Source:_ [GNU C Library Manual - Table of Output Conversions](https://www.gnu.org/software/libc/manual/html_node/Table-of-Output-Conversions.html)
+
+### Note:
+In the context of this project, undefined behavior scenarios, as described above, **do not need to be replicated or simulated**.
+
+---
+
+
+
 # Variadic Arguments in C: 32-bit vs 64-bit Memory Layout
 
 On a 32-bit system, arguments are typically stored sequentially on the stack. Each argument occupies a specific space in memory, based on its type and size.
@@ -5,16 +21,6 @@ On a 32-bit system, arguments are typically stored sequentially on the stack. Ea
 On a 64-bit system, however, arguments are passed using a combination of registers and stack memory, with registers taking priority for the first few arguments (typically up to 6 integer or pointer arguments). Only when registers are exhausted are arguments placed on the stack.
 
 However, **the specific behavior of variadic arguments in memory can vary significantly depending on the architecture and compiler**. Some compilers may handle variadic arguments differently, particularly when optimization flags are applied.
-
-> **""If a conversion specification is invalid, the behavior is undefined.If any argument is
-not the correct type for the corresponding conversion specification, the behavior is
-undefined"**"
->
-> Resource: ISO/IEC 9899:1999, 7.19.6.1 The fprintf Function
-
-> **"If the syntax of a conversion specification is invalid, unpredictable things will happen."**
->
-> Resource: [GNU C Library Manual - Table of Output Conversions](https://www.gnu.org/software/libc/manual/html_node/Table-of-Output-Conversions.html)
 
 ## Learn More
 

@@ -364,17 +364,22 @@ int main(void) {
 Include the print_va_list function in your code to inspect the values inside a va_list.
 
 ```c
-void print_va_list(const char *format, va_list args)
+void print_va_list(va_list args)
 {
 
-    printf("\nSTART ->   ---va_list---\n\n");
-    printf("va_list address: %p\n", (void *)&args);
-    printf("va_list points to address: %p\n\n", (void *)args);
-    printf("gp_ofset: %d\n", *(((unsigned int*)(args))) );
-    printf("fp_ofset: %d\n", *(((unsigned int*)(args)) + 1));
-    printf("overflow_reg_area: 0x%lx\n", *(((unsigned long*)(args)) + 1));
-    printf("reg_save_area: 0x%lx\n\n", *(((unsigned long*)(args)) + 2));
-    printf("END ->     ---va_list---\n\n");
+	unsigned int gp_offset = *((unsigned int *)(args));
+    unsigned int fp_offset = *((unsigned int *)(args) + 1);
+    unsigned long overflow_arg_area = *((unsigned long *)(args) + 1);
+    unsigned long reg_save_area = *((unsigned long *)(args) + 2);
+
+	printf("\n=========== DEBUG: va_list Details ===========\n");
+    printf("va_list Address:         %p\n", (void *)&args);
+    printf("va_list Points to Addr:  %p\n", (void *)args);
+    printf("General Purpose Offset:  %u\n", gp_offset);
+    printf("Floating Point Offset:   %u\n", fp_offset);
+    printf("Overflow Arg Area:  0x%lx\n", overflow_arg_area);
+    printf("Register Save Area: 0x%lx\n", reg_save_area);
+    printf("==============================================\n\n");
 }
 ```
 

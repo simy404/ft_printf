@@ -31,7 +31,7 @@ Table of Output Conversions in C (GNU C Library):
 - [Table of Output Conversions (gnu.org)](https://www.gnu.org/software/libc/manual/html_node/Table-of-Output-Conversions.html)
 
 
-## Example Code
+### Example Code
 ```c
 #include <stdio.h>
 
@@ -52,7 +52,7 @@ int main(void) {
 ```
 ---
 
-## Example Output: 32-bit System
+### Example Output: 32-bit System
 
 In a 32-bit system, each argument occupies 4 bytes on the stack and is stored sequentially in memory.
 <details>
@@ -193,7 +193,7 @@ In a 32-bit system, each argument occupies 4 bytes on the stack and is stored se
 
 ---
 
-## Example Output: 64-bit System
+### Example Output: 64-bit System
 
 On a 64-bit system, the first few arguments are stored in registers, while additional arguments are stored on the stack.
 <details>
@@ -337,7 +337,7 @@ When small types like char, short, and float are passed as arguments, they are a
 
 Padding, meanwhile, handles memory alignment. In 64-bit systems, all arguments are stored in 8-byte intervals for faster access, regardless of their original size. Type promotion standardizes data size, while padding arranges arguments in memory for efficient access with va_list.
 
-## Example Code
+### Example Code
 
 ```c
 void print_memory(void *q,int k);

@@ -6,6 +6,16 @@ On a 64-bit system, however, arguments are passed using a combination of registe
 
 However, **the specific behavior of variadic arguments in memory can vary significantly depending on the architecture and compiler**. Some compilers may handle variadic arguments differently, particularly when optimization flags are applied.
 
+> **""If a conversion specification is invalid, the behavior is undefined.If any argument is
+not the correct type for the corresponding conversion specification, the behavior is
+undefined"**"
+>
+> Resource: ISO/IEC 9899:1999, 7.19.6.1 The fprintf Function
+
+> **"If the syntax of a conversion specification is invalid, unpredictable things will happen."**
+>
+> Resource: [GNU C Library Manual - Table of Output Conversions](https://www.gnu.org/software/libc/manual/html_node/Table-of-Output-Conversions.html)
+
 ## Learn More
 
 For additional details on type promotions and how they affect variadic functions, check this link:  

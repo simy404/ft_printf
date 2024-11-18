@@ -26,15 +26,13 @@
 # define F_INT 'i'
 # define HEX_BASE_L "0123456789abcdef"
 # define HEX_BASE_U "0123456789ABCDEF"
-# define DECIMAL_BASE "0123456789"
 
 int	ft_printf(const char *format, ...);
 int	print_based_on_format(const char format, va_list args);
 int	ft_putchar(char c);
 int	ft_putstr(char *str);
-int	ft_putnbr_base(unsigned long nbr, char *base);
+int	ft_putnbr_base(unsigned long nbr, char *base, unsigned long base_len);
 int	ft_putnbr(long n);
-int	ft_strlen(char *str);
 int	ft_putptr(unsigned long ptr);
 
 #endif

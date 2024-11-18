@@ -21,11 +21,11 @@ int	print_based_on_format(const char format, va_list args)
 	else if (format == F_DECIMAL || format == F_INT)
 		return (ft_putnbr(va_arg(args, int)));
 	else if (format == F_UNSIGNED)
-		return (ft_putnbr_base(va_arg(args, unsigned int), DECIMAL_BASE));
+		return (ft_putnbr_base(va_arg(args, unsigned int), HEX_BASE_U, 10));
 	else if (format == F_HEX_LOWER)
-		return (ft_putnbr_base(va_arg(args, unsigned int), HEX_BASE_L));
+		return (ft_putnbr_base(va_arg(args, unsigned int), HEX_BASE_L, 16));
 	else if (format == F_HEX_UPPER)
-		return (ft_putnbr_base(va_arg(args, unsigned int), HEX_BASE_U));
+		return (ft_putnbr_base(va_arg(args, unsigned int), HEX_BASE_U, 16));
 	else if (format == F_POINTER)
 		return (ft_putptr(va_arg(args, unsigned long)));
 	else if (format == F_PERCENT)
